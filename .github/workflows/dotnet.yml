@@ -20,6 +20,13 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 9.0.x
+        
+    - name: Checkout Model
+      uses: actions/checkout@v4
+      with:
+        repository: https://huggingface.co/onnx-models/all-MiniLM-L6-v2-onnx
+        path: all-minilm
+        
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
